@@ -12,7 +12,11 @@ function loadWeather(){
                 fetch(url)
                 .then(res=>res.json())
                 .then(data=>{
-                    document.getElementById('temp').innerHTML = data.main.temp;
+                    console.log(data);
+                    document.getElementById('temp').innerHTML = `${kelvinConvert(data.main.temp)} &#8451`;
+                    document.getElementById('location').innerHTML = `${data.name},${data.sys.country}`;
+                    document.getElementById('weather').innerHTML = data.weather[0].main;
+                    document.getElementById('image').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
                 })
             } catch (error) {
                 
@@ -22,3 +26,5 @@ function loadWeather(){
         errorMessage = "Browser does not support geolocation";
     }
 }
+
+const kelvinConvert = temp => (temp-273.15).toFixed(1);

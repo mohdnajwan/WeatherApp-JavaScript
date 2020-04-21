@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Weather App</title>
 </head>
 <body onload="loadWeather()">
-    <header>
+    <header id="wave">
         <h1>Weather App</h1>
     </header>
     <div class="box">
-        <div class="image"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></div>
-        <p id="location">Shah Alam</p>
+        <p id="location" style="font-weight: 700;"></p>
+        <div class="image"><img src="" alt="" id="image"></div>
+        <p id="weather"></p>
         <h3 id="temp"></h3>
+        <br> 
     </div>
 </body>
 </html>
